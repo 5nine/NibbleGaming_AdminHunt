@@ -6,7 +6,8 @@ Epochmod forum post: http://epochmod.com/forum/index.php?/topic/33020-release-ad
 
 1. Copy folder `Scripts` to your mission folder (or inside your mission.pbo).
 2. Follow the instructions below.
-3. Make sure you change the PlayerGUID of your admins inside your `init.sqf`.
+3. Make sure you change the PlayerGUID of your admins inside `init.sqf`.
+
 
 Add this to the bottom of your `init.sqf`:
 
@@ -42,7 +43,7 @@ if (!isDedicated) then {
 
 ## Infistar:
 
-In `run.sqf`, make sure these config options are set as followed:
+If you run infistar, make sure these config options are set as followed in `run.sqf`:
 
 ```sqf
 /*  Remove Action Plrs   */ _OAP = false;
@@ -52,13 +53,12 @@ _UVC = false;
 
 ## BattleEye:
 
-
 <pre><code>
-publicvariable.txt:
+<b>In publicvariable.txt:</b>
 line 1:
 !"NibbleHint" !"reinforceme" !"iamdead" !"stopreinforceme"
 
-scripts.txt:
+<b>scripts.txt:</b>
 line 22: 
 !"execVM \"scripts\AdminHunt"
 
@@ -71,6 +71,6 @@ line 42:
 line 43:
 !"_markeradmin"
 
-publicvariableval.txt:
+<b>publicvariableval.txt:</b>
 remove the last line (1 ""), otherwise, your publicvariable.log will get spammed!
 </code></pre>
