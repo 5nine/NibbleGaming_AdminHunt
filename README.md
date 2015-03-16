@@ -20,6 +20,7 @@ if (isDedicated) then {
 };
 
 if (!isDedicated) then {
+	marker_refreshtime = 5; //Edit this to set how often the marker should refresh
 	adminlist = [
 	/*-------specify your admins PlayerGUID below -----*/
 	"XXXXXXXXXXXXXXXXX",

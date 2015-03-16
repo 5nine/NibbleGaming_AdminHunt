@@ -47,9 +47,15 @@ Check your map to see where he is, kill him!!!</t>",_nameadmin];
 	_markeradmin setMarkerText _markertext;
 
 	/* ---   the actual mission ---- */
+[_markeradmin] spawn {
 	while {alive player} do {
+		_markeradmin = _this select 0;
 		_markeradmin setMarkerPos getPos player;
-		sleep 1;
+		sleep marker_refreshtime;
+		if (stophunt) exitWith {};
+		};
+	};
+	while {alive player} do {
 		if (reinforce) then {
 			/* ---   addeventhandler if something goes wrong when player dies, too make sure AI fire at him after respawn ---*/
 			//player addEventHandler ["killed", {
@@ -136,6 +142,7 @@ Admin %1 is dead, long live the Admin!</t>",_nameadmin];
 				};
 			
 			};
+		sleep 1;
 		};
 						
 	if (debug_adminhunt) then {diag_log "#NibbleGaming Adminhunt: ending mission";};
