@@ -58,9 +58,9 @@ Check your map to see where he is, kill him!!!</t>",_nameadmin];
 	while {alive player} do {
 		if (reinforce) then {
 			/* ---   addeventhandler if something goes wrong when player dies, too make sure AI fire at him after respawn ---*/
-			//player addEventHandler ["killed", {
-			//player setCaptive false; ///probably not needed
-			//}];
+			player addEventHandler ["killed", {
+			player setCaptive false; ///probably not needed
+			}];
 					
 			/* ---   spawn AI's ---*/
 			reinforce = false;	
@@ -146,6 +146,7 @@ Admin %1 is dead, long live the Admin!</t>",_nameadmin];
 		};
 						
 	if (debug_adminhunt) then {diag_log "#NibbleGaming Adminhunt: ending mission";};
+	player setCaptive false;
 };
 
 			
