@@ -47,11 +47,17 @@ Check your map to see where he is, kill him!!!</t>",_nameadmin];
 	_markeradmin setMarkerText _markertext;
 
 	/* ---   the actual mission ---- */
+if (isNil "marker_refreshtime") then {
+    marker_refreshtime = 5;
+};
 [_markeradmin] spawn {
 	while {alive player} do {
 		_markeradmin = _this select 0;
 		_markeradmin setMarkerPos getPos player;
 		sleep marker_refreshtime;
+			if (!alive player) exitWith {
+				deletemarker _markeradmin;
+			};
 		if (stophunt) exitWith {};
 		};
 	};
